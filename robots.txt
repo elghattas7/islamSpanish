@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://islam-guia.com/sitemap.xml
+
+# Páginas principales
+Allow: /index.html
+Allow: /evidencias-cientificas.html
+Allow: /beneficios-islam.html
+Allow: /informacion-general.html
+
+# Archivos de recursos
+Allow: /styles.css
+Allow: /script.js
+
+# Archivos de configuración
+Allow: /robots.txt
+Allow: /sitemap.xml
+
+# Crawl-delay para ser respetuoso con los servidores
+Crawl-delay: 1

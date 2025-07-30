@@ -1,0 +1,1777 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --primary-color: #2c5530;
+    --primary-light: #4a7c59;
+    --primary-dark: #1a3d1f;
+    --secondary-color: #d4af37;
+    --secondary-light: #f4d03f;
+    --accent-color: #8b4513;
+    --text-primary: #2c3e50;
+    --text-secondary: #5d6d7e;
+    --text-light: #ffffff;
+    --background-light: #f8f9fa;
+    --background-white: #ffffff;
+    --border-color: #e9ecef;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-light));
+    --gradient-secondary: linear-gradient(135deg, var(--secondary-color), var(--secondary-light));
+    
+    /* Typography */
+    --font-arabic: 'Amiri', serif;
+    --font-primary: 'Open Sans', sans-serif;
+    --font-size-xs: 0.75rem;
+    --font-size-sm: 0.875rem;
+    --font-size-base: 1rem;
+    --font-size-lg: 1.125rem;
+    --font-size-xl: 1.25rem;
+    --font-size-2xl: 1.5rem;
+    --font-size-3xl: 1.875rem;
+    --font-size-4xl: 2.25rem;
+    --font-size-5xl: 3rem;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
+    --spacing-3xl: 4rem;
+    
+    /* Border Radius */
+    --radius-sm: 0.25rem;
+    --radius-md: 0.5rem;
+    --radius-lg: 0.75rem;
+    --radius-xl: 1rem;
+    
+    /* Transitions */
+    --transition-fast: 0.15s ease-in-out;
+    --transition-normal: 0.3s ease-in-out;
+    --transition-slow: 0.5s ease-in-out;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-primary);
+    font-size: var(--font-size-base);
+    line-height: 1.6;
+    color: var(--text-primary);
+    background-color: var(--background-white);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+}
+
+h1 { font-size: var(--font-size-4xl); }
+h2 { font-size: var(--font-size-3xl); }
+h3 { font-size: var(--font-size-2xl); }
+h4 { font-size: var(--font-size-xl); }
+h5 { font-size: var(--font-size-lg); }
+h6 { font-size: var(--font-size-base); }
+
+p {
+    margin-bottom: var(--spacing-md);
+}
+
+a {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+a:hover {
+    color: var(--primary-light);
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+}
+
+/* Header and Navigation */
+.header {
+    background: var(--background-white);
+    box-shadow: 0 2px 10px var(--shadow-light);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+}
+
+.navbar {
+    padding: var(--spacing-md) 0;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo .logo-text {
+    margin: 0;
+}
+
+.arabic-text {
+    display: block;
+    font-family: var(--font-arabic);
+    font-size: var(--font-size-lg);
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: var(--spacing-xs);
+}
+
+.spanish-text {
+    display: block;
+    font-size: var(--font-size-sm);
+    color: var(--text-secondary);
+    font-weight: 400;
+    text-align: center;
+}
+
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--spacing-sm);
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background: var(--primary-color);
+    margin: 3px 0;
+    transition: var(--transition-fast);
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+    gap: var(--spacing-xl);
+}
+
+.nav-link {
+    font-weight: 500;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-md);
+    transition: all var(--transition-fast);
+}
+
+.nav-link:hover,
+.nav-link.active {
+    background: var(--gradient-primary);
+    color: var(--text-light);
+}
+
+/* Main Content */
+main {
+    margin-top: 120px;
+}
+
+/* Hero Section */
+.hero {
+    background: var(--gradient-primary);
+    color: var(--text-light);
+    padding: var(--spacing-3xl) 0;
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+}
+
+.hero-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-3xl);
+    align-items: center;
+}
+
+.hero-title {
+    font-size: var(--font-size-4xl);
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-light);
+}
+
+.hero-subtitle {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-2xl);
+    opacity: 0.9;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: var(--spacing-md) var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    text-align: center;
+    transition: all var(--transition-normal);
+    border: 2px solid transparent;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.btn-primary {
+    background: var(--secondary-color);
+    color: var(--text-light);
+    border-color: var(--secondary-color);
+}
+
+.btn-primary:hover {
+    background: var(--secondary-light);
+    border-color: var(--secondary-light);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--text-light);
+    border-color: var(--text-light);
+}
+
+.btn-secondary:hover {
+    background: var(--text-light);
+    color: var(--primary-color);
+}
+
+.btn-large {
+    padding: var(--spacing-lg) var(--spacing-2xl);
+    font-size: var(--font-size-lg);
+}
+
+/* Hero Illustration */
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.quran-illustration {
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.quran-book {
+    width: 200px;
+    height: 250px;
+    background: var(--gradient-secondary);
+    border-radius: var(--radius-lg);
+    position: relative;
+    margin: 0 auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: perspective(1000px) rotateY(-15deg);
+}
+
+.quran-book::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    border: 2px solid var(--text-light);
+    border-radius: var(--radius-md);
+}
+
+.light-rays {
+    position: absolute;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+    background: radial-gradient(circle, rgba(244, 208, 63, 0.3) 0%, transparent 70%);
+    border-radius: 50%;
+    animation: glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from { opacity: 0.5; transform: scale(1); }
+    to { opacity: 0.8; transform: scale(1.1); }
+}
+
+/* Introduction Section */
+.introduction {
+    padding: var(--spacing-3xl) 0;
+    background: var(--background-light);
+}
+
+.intro-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.section-title {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+}
+
+.intro-text {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+}
+
+/* Main Sections */
+.main-sections {
+    padding: var(--spacing-3xl) 0;
+}
+
+.sections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: var(--spacing-2xl);
+}
+
+.section-card {
+    background: var(--background-white);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-2xl);
+    box-shadow: 0 5px 20px var(--shadow-light);
+    transition: all var(--transition-normal);
+    border: 1px solid var(--border-color);
+}
+
+.section-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow-medium);
+}
+
+.card-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-lg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--gradient-primary);
+}
+
+.icon-science,
+.icon-benefits,
+.icon-info {
+    width: 40px;
+    height: 40px;
+    background: var(--text-light);
+    border-radius: var(--radius-md);
+}
+
+.card-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.card-description {
+    text-align: center;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-lg);
+}
+
+.card-features {
+    list-style: none;
+    margin-bottom: var(--spacing-lg);
+}
+
+.card-features li {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+}
+
+.card-features li:last-child {
+    border-bottom: none;
+}
+
+.card-features li::before {
+    content: '✓';
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-right: var(--spacing-sm);
+}
+
+.card-link {
+    display: block;
+    text-align: center;
+    font-weight: 600;
+    color: var(--primary-color);
+    padding: var(--spacing-md);
+    border: 2px solid var(--primary-color);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+}
+
+.card-link:hover {
+    background: var(--primary-color);
+    color: var(--text-light);
+}
+
+/* Quote Section */
+.quote-section {
+    background: var(--background-light);
+    padding: var(--spacing-3xl) 0;
+}
+
+.featured-quote {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.quote-text {
+    font-size: var(--font-size-xl);
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.8;
+}
+
+.quote-source {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* CTA Section */
+.cta-section {
+    background: var(--gradient-primary);
+    color: var(--text-light);
+    padding: var(--spacing-3xl) 0;
+    text-align: center;
+}
+
+.cta-title {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-md);
+}
+
+.cta-text {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-2xl);
+    opacity: 0.9;
+}
+
+/* Footer */
+.footer {
+    background: var(--text-primary);
+    color: var(--text-light);
+    padding: var(--spacing-3xl) 0 var(--spacing-lg);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-2xl);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.footer-title {
+    color: var(--secondary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-subtitle {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-md);
+}
+
+.footer-text {
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: var(--spacing-sm);
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.8);
+    transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-lg);
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: var(--background-white);
+        flex-direction: column;
+        padding: var(--spacing-md);
+        box-shadow: 0 5px 15px var(--shadow-light);
+    }
+    
+    .nav-menu.active {
+        display: flex;
+    }
+    
+    .hero-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .sections-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-buttons {
+        justify-content: center;
+    }
+    
+    .quran-illustration {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .quran-book {
+        width: 150px;
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 var(--spacing-sm);
+    }
+    
+    .hero {
+        padding: var(--spacing-2xl) 0;
+    }
+    
+    .hero-title {
+        font-size: var(--font-size-2xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--font-size-base);
+    }
+    
+    .btn {
+        padding: var(--spacing-sm) var(--spacing-lg);
+        font-size: var(--font-size-sm);
+    }
+    
+    .btn-large {
+        padding: var(--spacing-md) var(--spacing-xl);
+        font-size: var(--font-size-base);
+    }
+    
+    .section-card {
+        padding: var(--spacing-lg);
+    }
+    
+    .quote-text {
+        font-size: var(--font-size-lg);
+    }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* Focus styles for accessibility */
+a:focus,
+button:focus,
+.nav-link:focus {
+    outline: 2px solid var(--secondary-color);
+    outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --shadow-light: rgba(0, 0, 0, 0.3);
+        --shadow-medium: rgba(0, 0, 0, 0.5);
+    }
+}
+
+/* Page-specific styles */
+.page-hero {
+    background: var(--gradient-primary);
+    color: var(--text-light);
+    padding: var(--spacing-2xl) 0;
+    margin-top: 120px;
+}
+
+.page-hero-content {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.page-title {
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-lg);
+    color: var(--text-light);
+}
+
+.page-subtitle {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-2xl);
+    opacity: 0.9;
+}
+
+.content-nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-md);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.content-nav a {
+    background: rgba(255, 255, 255, 0.2);
+    color: var(--text-light);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+    font-size: var(--font-size-sm);
+}
+
+.content-nav a:hover {
+    background: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+/* Scientific sections */
+.scientific-intro {
+    padding: var(--spacing-3xl) 0;
+    background: var(--background-light);
+}
+
+.scientific-section {
+    padding: var(--spacing-3xl) 0;
+}
+
+.scientific-section.alt-bg {
+    background: var(--background-light);
+}
+
+.scientific-article {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.article-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.article-title {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+}
+
+.article-intro {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Quran verses */
+.quran-verse {
+    background: var(--gradient-secondary);
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-xl);
+    margin: var(--spacing-2xl) 0;
+    text-align: center;
+    position: relative;
+}
+
+.quran-verse::before {
+    content: '"';
+    font-size: 4rem;
+    color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-family: serif;
+}
+
+.verse-text {
+    margin: 0;
+}
+
+.verse-text p {
+    font-size: var(--font-size-lg);
+    font-style: italic;
+    color: var(--text-light);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.8;
+}
+
+.verse-reference {
+    font-size: var(--font-size-base);
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 600;
+}
+
+/* Scientific explanations */
+.scientific-explanation {
+    margin: var(--spacing-2xl) 0;
+}
+
+.explanation-title {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-xl);
+}
+
+.meanings-grid,
+.mountain-facts,
+.universe-facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+}
+
+.meaning-card,
+.fact-card {
+    background: var(--background-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 3px 15px var(--shadow-light);
+    border-left: 4px solid var(--primary-color);
+}
+
+.meaning-card h5,
+.fact-card h5 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+}
+
+.meaning-card p,
+.fact-card p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Expert testimony */
+.expert-testimony {
+    background: var(--background-light);
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-xl);
+    margin: var(--spacing-2xl) 0;
+}
+
+.testimony-title {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.expert-quote {
+    text-align: center;
+    margin: 0;
+}
+
+.expert-quote p {
+    font-size: var(--font-size-lg);
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.8;
+}
+
+.expert-name {
+    font-size: var(--font-size-base);
+    color: var(--text-secondary);
+    font-weight: 600;
+    display: block;
+}
+
+.scientific-quote {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-xl) 0;
+    text-align: center;
+    position: relative;
+}
+
+.scientific-quote::before {
+    content: '"';
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-family: serif;
+}
+
+.scientific-quote p {
+    font-size: var(--font-size-lg);
+    font-style: italic;
+    margin: 0;
+    line-height: 1.8;
+}
+
+/* Section navigation */
+.section-navigation {
+    background: var(--background-light);
+    padding: var(--spacing-3xl) 0;
+}
+
+.nav-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.nav-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.nav-card {
+    background: var(--background-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 3px 15px var(--shadow-light);
+    transition: all var(--transition-normal);
+    text-decoration: none;
+    color: inherit;
+}
+
+.nav-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.nav-card h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.nav-card p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* CTA buttons container */
+.cta-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Responsive adjustments for content pages */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: var(--font-size-2xl);
+    }
+
+    .content-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .meanings-grid,
+    .mountain-facts,
+    .universe-facts {
+        grid-template-columns: 1fr;
+    }
+
+    .nav-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quran-verse,
+    .expert-testimony {
+        padding: var(--spacing-lg);
+    }
+
+    .verse-text p,
+    .expert-quote p {
+        font-size: var(--font-size-base);
+    }
+
+    .cta-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .scientific-section {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .meaning-card,
+    .fact-card {
+        padding: var(--spacing-md);
+    }
+
+    .quran-verse::before,
+    .scientific-quote::before {
+        font-size: 2.5rem;
+        top: 5px;
+        left: 10px;
+    }
+}
+
+/* Benefits page specific styles */
+.benefits-intro {
+    padding: var(--spacing-3xl) 0;
+    background: var(--background-light);
+}
+
+.benefits-quote {
+    background: var(--primary-color);
+    color: var(--text-light);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-xl) 0;
+    text-align: center;
+    position: relative;
+}
+
+.benefits-quote::before {
+    content: '"';
+    font-size: 3rem;
+    color: rgba(255, 255, 255, 0.3);
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-family: serif;
+}
+
+.benefits-quote p {
+    font-size: var(--font-size-lg);
+    font-style: italic;
+    margin: 0;
+    line-height: 1.8;
+}
+
+.benefit-section {
+    padding: var(--spacing-3xl) 0;
+}
+
+.benefit-section.alt-bg {
+    background: var(--background-light);
+}
+
+.benefit-article {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.benefit-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.benefit-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto var(--spacing-lg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.paradise-icon {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+.salvation-icon {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.peace-icon {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.forgiveness-icon {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+
+.benefit-icon::before {
+    content: '';
+    width: 50px;
+    height: 50px;
+    background: var(--text-light);
+    border-radius: var(--radius-md);
+}
+
+.benefit-title {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-2xl);
+}
+
+.benefit-intro {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.benefit-content {
+    margin-top: var(--spacing-2xl);
+}
+
+.content-subtitle {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-xl);
+}
+
+.features-grid,
+.methods-grid,
+.sources-grid,
+.conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-xl) 0;
+}
+
+.feature-card,
+.method-card,
+.source-card,
+.condition-card {
+    background: var(--background-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 3px 15px var(--shadow-light);
+    border-top: 4px solid var(--secondary-color);
+    transition: all var(--transition-normal);
+}
+
+.feature-card:hover,
+.method-card:hover,
+.source-card:hover,
+.condition-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--shadow-medium);
+}
+
+.feature-card h5,
+.method-card h5,
+.source-card h5,
+.condition-card h5 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+}
+
+.feature-card p,
+.method-card p,
+.source-card p,
+.condition-card p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.achievement-list,
+.benefits-list {
+    list-style: none;
+    padding: 0;
+}
+
+.achievement-list li,
+.benefits-list li {
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    position: relative;
+    padding-left: var(--spacing-xl);
+}
+
+.achievement-list li:last-child,
+.benefits-list li:last-child {
+    border-bottom: none;
+}
+
+.achievement-list li::before,
+.benefits-list li::before {
+    content: '✓';
+    color: var(--primary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: var(--spacing-sm);
+}
+
+.mercy-quote,
+.forgiveness-quote {
+    background: var(--gradient-secondary);
+    color: var(--text-light);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-xl) 0;
+    text-align: center;
+}
+
+.mercy-quote p,
+.forgiveness-quote p {
+    font-size: var(--font-size-lg);
+    font-style: italic;
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.8;
+}
+
+.forgiveness-quote cite {
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+/* Testimonials section */
+.testimonials-section {
+    background: var(--background-light);
+    padding: var(--spacing-3xl) 0;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.testimonial-card {
+    background: var(--background-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 5px 20px var(--shadow-light);
+    position: relative;
+}
+
+.testimonial-card::before {
+    content: '"';
+    font-size: 3rem;
+    color: var(--primary-color);
+    opacity: 0.3;
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    font-family: serif;
+}
+
+.testimonial-card blockquote {
+    margin: 0;
+    padding-top: var(--spacing-lg);
+}
+
+.testimonial-card blockquote p {
+    font-style: italic;
+    color: var(--text-primary);
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.7;
+}
+
+.testimonial-card cite {
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: var(--font-size-sm);
+}
+
+/* Responsive adjustments for benefits page */
+@media (max-width: 768px) {
+    .features-grid,
+    .methods-grid,
+    .sources-grid,
+    .conditions-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .benefit-icon {
+        width: 80px;
+        height: 80px;
+    }
+
+    .benefit-icon::before {
+        width: 40px;
+        height: 40px;
+    }
+
+    .benefit-title {
+        font-size: var(--font-size-xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .benefit-section {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .feature-card,
+    .method-card,
+    .source-card,
+    .condition-card,
+    .testimonial-card {
+        padding: var(--spacing-md);
+    }
+
+    .benefits-quote::before,
+    .testimonial-card::before {
+        font-size: 2.5rem;
+        top: 5px;
+        left: 10px;
+    }
+}
+
+/* Information page specific styles */
+.info-section {
+    padding: var(--spacing-3xl) 0;
+}
+
+.info-section.alt-bg {
+    background: var(--background-light);
+}
+
+.info-article {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.info-header {
+    text-align: center;
+    margin-bottom: var(--spacing-2xl);
+}
+
+.info-title {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-2xl);
+}
+
+.info-intro {
+    font-size: var(--font-size-lg);
+    color: var(--text-secondary);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.definition-card {
+    background: var(--gradient-primary);
+    color: var(--text-light);
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-xl);
+    margin: var(--spacing-2xl) 0;
+    text-align: center;
+}
+
+.definition-title {
+    color: var(--text-light);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-xl);
+}
+
+.definition-card p {
+    font-size: var(--font-size-lg);
+    line-height: 1.8;
+    margin: 0;
+}
+
+.characteristics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin: var(--spacing-2xl) 0;
+}
+
+.characteristic-card {
+    background: var(--background-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 3px 15px var(--shadow-light);
+    border-left: 4px solid var(--secondary-color);
+    transition: all var(--transition-normal);
+}
+
+.characteristic-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--shadow-medium);
+}
+
+.characteristic-card h5 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-lg);
+}
+
+.characteristic-card p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Beliefs section */
+.beliefs-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin: var(--spacing-2xl) 0;
+}
+
+.belief-card {
+    background: var(--background-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 5px 20px var(--shadow-light);
+    text-align: center;
+    position: relative;
+    transition: all var(--transition-normal);
+}
+
+.belief-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow-medium);
+}
+
+.belief-number {
+    width: 60px;
+    height: 60px;
+    background: var(--gradient-primary);
+    color: var(--text-light);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--font-size-xl);
+    font-weight: bold;
+    margin: 0 auto var(--spacing-lg);
+}
+
+.belief-card h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-lg);
+}
+
+.belief-card p {
+    color: var(--text-secondary);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* Pillars section */
+.pillars-container {
+    margin: var(--spacing-2xl) 0;
+}
+
+.pillar-card {
+    background: var(--background-white);
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-xl);
+    box-shadow: 0 5px 20px var(--shadow-light);
+    margin-bottom: var(--spacing-2xl);
+    border-top: 5px solid var(--secondary-color);
+}
+
+.pillar-icon {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto var(--spacing-lg);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.shahada-icon {
+    background: linear-gradient(135deg, #e74c3c, #c0392b);
+}
+
+.prayer-icon {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+}
+
+.zakat-icon {
+    background: linear-gradient(135deg, #2ecc71, #27ae60);
+}
+
+.fasting-icon {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+}
+
+.hajj-icon {
+    background: linear-gradient(135deg, #9b59b6, #8e44ad);
+}
+
+.pillar-icon::before {
+    content: '';
+    width: 40px;
+    height: 40px;
+    background: var(--text-light);
+    border-radius: var(--radius-md);
+}
+
+.pillar-card h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-md);
+    text-align: center;
+    font-size: var(--font-size-xl);
+}
+
+.pillar-arabic {
+    font-family: var(--font-arabic);
+    font-size: var(--font-size-2xl);
+    color: var(--primary-color);
+    text-align: center;
+    margin: var(--spacing-md) 0;
+    direction: rtl;
+}
+
+.pillar-translation {
+    font-style: italic;
+    color: var(--text-secondary);
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    font-size: var(--font-size-lg);
+}
+
+.pillar-description {
+    color: var(--text-primary);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-lg);
+}
+
+.prayer-times {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: var(--spacing-sm);
+}
+
+.prayer-times li {
+    background: var(--background-light);
+    padding: var(--spacing-sm);
+    border-radius: var(--radius-md);
+    text-align: center;
+    color: var(--text-secondary);
+    font-size: var(--font-size-sm);
+}
+
+.zakat-benefits,
+.ramadan-benefits,
+.hajj-significance {
+    background: var(--background-light);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    margin-top: var(--spacing-md);
+}
+
+.zakat-benefits p,
+.ramadan-benefits p,
+.hajj-significance p {
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.zakat-benefits ul,
+.ramadan-benefits ul,
+.hajj-significance ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.zakat-benefits li,
+.ramadan-benefits li,
+.hajj-significance li {
+    color: var(--text-secondary);
+    padding: var(--spacing-xs) 0;
+    position: relative;
+    padding-left: var(--spacing-lg);
+}
+
+.zakat-benefits li::before,
+.ramadan-benefits li::before,
+.hajj-significance li::before {
+    content: '•';
+    color: var(--secondary-color);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+/* Prophet section */
+.prophet-info {
+    margin: var(--spacing-2xl) 0;
+}
+
+.prophet-timeline {
+    margin-bottom: var(--spacing-2xl);
+}
+
+.prophet-timeline h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.timeline-item {
+    display: flex;
+    margin-bottom: var(--spacing-lg);
+    align-items: flex-start;
+}
+
+.timeline-year {
+    background: var(--gradient-primary);
+    color: var(--text-light);
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-radius: var(--radius-lg);
+    font-weight: bold;
+    min-width: 80px;
+    text-align: center;
+    margin-right: var(--spacing-lg);
+}
+
+.timeline-content {
+    flex: 1;
+}
+
+.timeline-content h5 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-xs);
+}
+
+.timeline-content p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+.prophet-qualities h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-lg);
+    text-align: center;
+}
+
+.qualities-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.quality-card {
+    background: var(--background-white);
+    padding: var(--spacing-lg);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 3px 15px var(--shadow-light);
+    text-align: center;
+    border-bottom: 3px solid var(--secondary-color);
+}
+
+.quality-card h5 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.quality-card p {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: var(--font-size-sm);
+}
+
+/* Continue reading section */
+.continue-reading {
+    background: var(--background-light);
+    padding: var(--spacing-3xl) 0;
+}
+
+.continue-title {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-2xl);
+}
+
+.continue-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+}
+
+.continue-card {
+    background: var(--background-white);
+    padding: var(--spacing-xl);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 3px 15px var(--shadow-light);
+    transition: all var(--transition-normal);
+    text-decoration: none;
+    color: inherit;
+}
+
+.continue-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--shadow-medium);
+}
+
+.continue-card h4 {
+    color: var(--primary-color);
+    margin-bottom: var(--spacing-sm);
+}
+
+.continue-card p {
+    color: var(--text-secondary);
+    margin: 0;
+}
+
+/* Shahada display */
+.shahada-display {
+    background: var(--gradient-secondary);
+    padding: var(--spacing-2xl);
+    border-radius: var(--radius-xl);
+    margin: var(--spacing-2xl) 0;
+    text-align: center;
+}
+
+.shahada-arabic {
+    font-family: var(--font-arabic);
+    font-size: var(--font-size-3xl);
+    color: var(--text-light);
+    margin-bottom: var(--spacing-md);
+    direction: rtl;
+}
+
+.shahada-translation {
+    font-size: var(--font-size-lg);
+    color: var(--text-light);
+    font-style: italic;
+    margin: 0;
+}
+
+/* Responsive adjustments for info page */
+@media (max-width: 768px) {
+    .characteristics-grid,
+    .beliefs-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .qualities-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .continue-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item {
+        flex-direction: column;
+    }
+
+    .timeline-year {
+        margin-right: 0;
+        margin-bottom: var(--spacing-sm);
+        align-self: flex-start;
+    }
+
+    .prayer-times {
+        grid-template-columns: 1fr;
+    }
+
+    .shahada-arabic {
+        font-size: var(--font-size-2xl);
+    }
+}
+
+@media (max-width: 480px) {
+    .info-section {
+        padding: var(--spacing-2xl) 0;
+    }
+
+    .pillar-card {
+        padding: var(--spacing-lg);
+    }
+
+    .belief-card {
+        padding: var(--spacing-lg);
+    }
+
+    .definition-card {
+        padding: var(--spacing-lg);
+    }
+
+    .pillar-arabic {
+        font-size: var(--font-size-xl);
+    }
+
+    .shahada-arabic {
+        font-size: var(--font-size-xl);
+    }
+}
